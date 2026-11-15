@@ -5,17 +5,16 @@ function SettlementSlip({
   transactions,
   onSelectTransaction,
   onGoToIntake,
-  onGoToLedger
+  onGoToLedger,
+  appIcon
 }) {
   if (!transaction) {
     return (
       <section className="view-section">
         <div className="surface-box empty-box">
-          <svg className="empty-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="12" cy="5" r="2" />
-            <path d="M12 7V16C12 18.8 14.2 21 17 21C19.8 21 22 18.8 22 16V13" />
-            <path d="M19 15L22 12" />
-          </svg>
+          {appIcon && (
+            <img src={appIcon} alt="AquaCatch" className="empty-logo-img" />
+          )}
           <h2>No Settlement Voucher Active</h2>
           <p>Record a catch unloading at the intake desk to generate a disbursement slip.</p>
           <button type="button" className="btn-cta-inline" onClick={onGoToIntake}>
@@ -99,12 +98,9 @@ function SettlementSlip({
           <div className="voucher-paper">
             <div className="voucher-head">
               <div className="voucher-crest">
-                <svg className="svg-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M2 17L4.5 20.5C5.3 21.5 6.5 22 7.8 22H16.2C17.5 22 18.7 21.5 19.5 20.5L22 17H2Z" />
-                  <path d="M12 3V17" />
-                  <path d="M12 4L19 14H12" />
-                  <path d="M12 6L6 14H12" />
-                </svg>
+                {appIcon ? (
+                  <img src={appIcon} alt="AquaCatch Seal" className="voucher-crest-img" />
+                ) : null}
               </div>
               <strong>AQUACATCH MUNICIPAL FISH PORT</strong>
               <span>PIER 1 • SETTLEMENT DISBURSEMENT VOUCHER</span>
