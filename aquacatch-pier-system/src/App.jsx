@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import IntakeForm from './components/intakeForm';
 import SettlementSlip from './components/SettlementSlip';
 import LedgerTable from './components/LedgerTable';
+import appIcon from './assets/ICON_aquaCatch.png'; // Change .png to .jpg/.svg if needed
 import './App.css';
 
 function App() {
@@ -54,14 +55,12 @@ function App() {
       <header className="top-navbar">
         <div className="navbar-inner">
           <div className="brand-identity">
-            <div className="brand-logo-badge" aria-hidden="true">
-              {/* Custom Fishing Boat + Wave Vector Icon */}
-              <svg className="svg-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M2 17L4.5 20.5C5.3 21.5 6.5 22 7.8 22H16.2C17.5 22 18.7 21.5 19.5 20.5L22 17H2Z" />
-                <path d="M12 3V17" />
-                <path d="M12 4L19 14H12" />
-                <path d="M12 6L6 14H12" />
-              </svg>
+            <div className="brand-logo-badge">
+              <img
+                src={appIcon}
+                alt="AquaCatch Logo"
+                className="brand-logo-img"
+              />
             </div>
             <div>
               <strong className="brand-title">AquaCatch</strong>
@@ -76,7 +75,6 @@ function App() {
               className={`nav-link ${activePage === 'intake' ? 'nav-link-active' : ''}`}
               onClick={() => setActivePage('intake')}
             >
-              {/* Fishing Hook Vector Icon */}
               <svg className="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="5" r="2" />
                 <path d="M12 7V16C12 18.8 14.2 21 17 21C19.8 21 22 18.8 22 16V13" />
@@ -90,7 +88,6 @@ function App() {
               className={`nav-link ${activePage === 'voucher' ? 'nav-link-active' : ''}`}
               onClick={() => setActivePage('voucher')}
             >
-              {/* Voucher / Receipt Vector Icon */}
               <svg className="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4 2V22L6 20L8 22L10 20L12 22L14 20L16 22L18 20L20 22V2L18 4L16 2L14 4L12 2L10 4L8 2L6 4L4 2Z" />
                 <line x1="8" y1="10" x2="16" y2="10" />
@@ -104,7 +101,6 @@ function App() {
               className={`nav-link ${activePage === 'ledger' ? 'nav-link-active' : ''}`}
               onClick={() => setActivePage('ledger')}
             >
-              {/* Harbor Ledger Vector Icon */}
               <svg className="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="4" width="18" height="16" rx="2" />
                 <line x1="3" y1="10" x2="21" y2="10" />
@@ -147,6 +143,7 @@ function App() {
             onSelectTransaction={setSelectedTrxId}
             onGoToIntake={() => setActivePage('intake')}
             onGoToLedger={() => setActivePage('ledger')}
+            appIcon={appIcon}
           />
         )}
 

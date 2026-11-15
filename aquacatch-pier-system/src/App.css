@@ -903,3 +903,49 @@ body {
     width: 100%;
   }
 }
+
+/* Custom Asset Icon (ICON_aquaCatch) Styling */
+.brand-logo-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  border: 2px solid var(--reef-orange);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 2px;
+}
+
+.brand-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.voucher-crest {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background-color: var(--ocean-aqua-tint);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 4px;
+  margin-bottom: 6px;
+}
+
+.voucher-crest-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.empty-logo-img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin-bottom: 4px;
+}
